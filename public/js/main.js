@@ -4,17 +4,26 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
 // Get username and room from URL
-const { username, room } = Qs.parse(location.search, {
+const {
+  username,
+  room
+} = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
 const socket = io();
 
 // Join chatroom
-socket.emit('joinRoom', { username, room });
+socket.emit('joinRoom', {
+  username,
+  room
+});
 
 // Get room and users
-socket.on('roomUsers', ({ room, users }) => {
+socket.on('roomUsers', ({
+  room,
+  users
+}) => {
   outputRoomName(room);
   outputUsers(users);
 });
@@ -82,9 +91,8 @@ function outputUsers(users) {
 
 //Prompt the user before leave chat room
 document.getElementById('leave-btn').addEventListener('click', () => {
-  const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+  const leaveRoom = confirm('Você realmente quer sair do canal de texto?');
   if (leaveRoom) {
     window.location = '../index.html';
-  } else {
-  }
+  } else {}
 });
