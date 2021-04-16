@@ -1,13 +1,13 @@
 {
-  "name": "chatcord",
+  "name": "BogChat",
   "version": "1.0.0",
-  "description": "Realtime chat app with rooms",
+  "description": "Chat com salas, projeto de sistema cliente-servidor",
   "main": "server.js",
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"
   },
-  "author": "Brad Traversy",
+  "author": "Pedro Henrique",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
